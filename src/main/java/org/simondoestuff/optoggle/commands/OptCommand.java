@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import java.util.LinkedList;
 import java.util.UUID;
 
-import static org.simondoestuff.optoggle.OPToggle.PREFIX;
+import static org.simondoestuff.optoggle.OpToggle.PREFIX;
 import static org.simondoestuff.optoggle.Utils.sendMsg;
 
 public class OptCommand implements CommandExecutor {

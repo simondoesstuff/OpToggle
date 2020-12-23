@@ -1,6 +1,6 @@
 name: OpToggle
 version: 1.0
-main: org.simondoestuff.optoggle.OPToggle
+main: org.simondoestuff.optoggle.OpToggle
 author: simondoestuff
 api-version: 1.16
 commands:

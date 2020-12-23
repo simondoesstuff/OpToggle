@@ -5,12 +5,12 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.simondoestuff.optoggle.OPToggle;
+import org.simondoestuff.optoggle.OpToggle;
 
 import java.util.LinkedList;
 import java.util.UUID;
 
-import static org.simondoestuff.optoggle.OPToggle.PREFIX;
+import static org.simondoestuff.optoggle.OpToggle.PREFIX;
 import static org.simondoestuff.optoggle.Utils.sendMsg;
 
 public class SuperOPCommand implements CommandExecutor {
@@ -56,7 +56,7 @@ public class SuperOPCommand implements CommandExecutor {
 
                 sendMsg(sender, PREFIX + " " + p.getName() + "&3 " + (contains ? "&4is no longer &3super-oped." : "&ais now &3super-oped.&r"));
             }
-        }.runTaskAsynchronously(OPToggle.getInst());
+        }.runTaskAsynchronously(OpToggle.getInst());
     }
 
     private void list(CommandSender sender) {
@@ -94,6 +94,6 @@ public class SuperOPCommand implements CommandExecutor {
                 msg.append("&r");
                 sendMsg(sender, msg.toString());
             }
-        }.runTaskAsynchronously(OPToggle.getInst());
+        }.runTaskAsynchronously(OpToggle.getInst());
     }
 }
