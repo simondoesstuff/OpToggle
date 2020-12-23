@@ -1,0 +1,15 @@
+name: OPToggle
+version: 1.0
+main: org.simondoestuff.optoggle.OPToggle
+author: simondoestuff
+api-version: 1.16
+commands:
+  OPToggle:
+    aliases:
+      - "opt"
+    usage: "/opt"
+    description: "Toggle your OP if you are super-oped."
+  SuperOP:
+    aliases: "sop"
+    usage: "/sop <player>"
+    description: "List all super-ops or use console to toggle a super-op."
