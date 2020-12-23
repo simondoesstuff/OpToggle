@@ -1,2 +1,2 @@
-# OPToggle
-OPToggle is a Minecraft plugin designed primarily for Spigot.
+# OpToggle
+OpToggle is a Minecraft plugin designed primarily for Spigot.
