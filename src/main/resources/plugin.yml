@@ -1,4 +1,4 @@
-name: OPToggle
+name: OpToggle
 version: 1.0
 main: org.simondoestuff.optoggle.OPToggle
 author: simondoestuff
@@ -8,7 +8,7 @@ commands:
     aliases:
       - "opt"
     usage: "/opt"
-    description: "Toggle your OP if you are super-oped."
+    description: "Toggle op anytime. Must be super-oped."
   SuperOP:
     aliases: "sop"
     usage: "/sop <player>"
