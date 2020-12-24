@@ -39,7 +39,7 @@ public class SuperOPCommand implements CommandExecutor {
             public void run() {
                 OfflinePlayer p = Bukkit.getOfflinePlayer(target);
 
-                if (!p.hasPlayedBefore()) {
+                if (!p.hasPlayedBefore() && !p.isOnline()) {
                     sendMsg(sender, PREFIX + " &4Player not found. Try again when they are online.");
                     return;
                 }
@@ -55,6 +55,12 @@ public class SuperOPCommand implements CommandExecutor {
                 }
 
                 sendMsg(sender, PREFIX + " " + p.getName() + "&3 " + (contains ? "&4is no longer &3super-oped." : "&ais now &3super-oped.&r"));
+
+                Player onlinePlayer = p.getPlayer();
+
+                if (onlinePlayer != null) {
+                    sendMsg(onlinePlayer, PREFIX + " You are " + (contains ? "&4no longer &3super-oped." : "&anow &3super-oped.&r"));
+                }
             }
         }.runTaskAsynchronously(OpToggle.getInst());
     }

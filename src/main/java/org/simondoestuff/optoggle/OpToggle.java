@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
+import static org.simondoestuff.optoggle.Utils.filterNullsOnUUIDList;
 import static org.simondoestuff.optoggle.Utils.sendMsg;
 
 public final class OpToggle extends JavaPlugin {
@@ -31,6 +32,7 @@ public final class OpToggle extends JavaPlugin {
 
         List<String> oplist = getConfig().getStringList("oplist");
         oplist.forEach(s -> list.add(UUID.fromString(s)));
+        filterNullsOnUUIDList(list);
 
         Bukkit.getPluginCommand("OPToggle").setExecutor(new OptCommand(list));
         Bukkit.getPluginCommand("SuperOP").setExecutor(new SuperOPCommand(list));
@@ -45,6 +47,8 @@ public final class OpToggle extends JavaPlugin {
         synchronized (list) {
             ArrayList<String> writeList = new ArrayList<>();
             list.forEach(uuid -> writeList.add(uuid.toString()));
+            filterNullsOnUUIDList(list);
+
             getConfig().set("oplist", writeList);
         }
 
