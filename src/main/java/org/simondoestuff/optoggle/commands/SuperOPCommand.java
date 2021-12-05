@@ -24,7 +24,8 @@ public class SuperOPCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args == null || args.length == 0) list(sender);
         else if (args.length == 1) {
-            if (sender instanceof ConsoleCommandSender) toggle(sender, args[0]);
+            // RCON uses RemoteConsoleCommandSender. We treat that equivalent to the normal console here.
+            if (sender instanceof ConsoleCommandSender || sender instanceof RemoteConsoleCommandSender) toggle(sender, args[0]);
             else sendMsg(sender, PREFIX + "&4 You must be console to use this command.");
         } else sendMsg(sender, PREFIX + "&4 You must provide either 1 or 0 arguments.");
 
